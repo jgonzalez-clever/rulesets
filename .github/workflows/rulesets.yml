@@ -19,6 +19,7 @@ jobs:
       - name: Set protection rules on selected reposiories
         run: |
           repo_names=$(jq -r '.repositories[].repo_name' repositories.json) && echo $repo_names
+          owner=$(jq -r '.repositories[].owner' repositories.json) && echo $owner
 
           for u in $repo_names
           do

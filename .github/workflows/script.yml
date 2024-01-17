@@ -1,8 +1,20 @@
- 
-  on:
-        workflow_dispatch:
+name: Set Branch Protection on Test Repositories
 
-      run: |
+on:
+  workflow_dispatch:
+
+jobs:
+  Branch-Protection:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - id: read-json-config
+        run: echo "BRANCH_CONFIGURATION=$(jq -c . < ./branch_protection.json)" >> $GITHUB_OUTPUT
+
+      - name: Set branch protection rules on selected reposiories
+        run: |
           # LISTAR REPOS
           REPOS="Test.Microservice.2 Test.Microservice.1 Test.Microfrontend.2 Test.Microfrontend.1"
           
