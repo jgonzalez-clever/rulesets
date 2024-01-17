@@ -1,5 +1,8 @@
  
-        run: |
+  on:
+        workflow_dispatch:
+
+      run: |
           # LISTAR REPOS
           REPOS="Test.Microservice.2 Test.Microservice.1 Test.Microfrontend.2 Test.Microfrontend.1"
           

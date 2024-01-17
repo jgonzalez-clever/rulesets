@@ -1,4 +1,4 @@
-name: Set Branch Protection on Test Repositories
+name: Rulesetes protection
 
 on:
   workflow_dispatch:
