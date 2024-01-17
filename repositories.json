@@ -1,5 +1,5 @@
 {
-    "owner" : "owner_juli",
+    "owner" : "jgonzalez-clever",
 
     "repositories": [
       {
@@ -7,10 +7,6 @@
       },
       {
         "repo_name": "repo2"
-      },
-      {
-        "repo_name": "repo3"
       }
-
     ]
 }
