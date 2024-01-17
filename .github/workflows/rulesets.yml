@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Branch-Protection:
+  Rulesetes-Protection:
     runs-on: ubuntu-latest
 
     steps:
