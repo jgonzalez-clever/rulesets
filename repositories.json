@@ -1,4 +1,6 @@
 {
+    "owner" : "owner_name",
+    
     "repositories": [
       {
         "repo_name": "repo1"
