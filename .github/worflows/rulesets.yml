@@ -1,0 +1,21 @@
+name: Set Branch Protection on Test Repositories
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Branch-Protection:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - id: read-json-rules
+        run: echo "RULESETS=$(jq -c . < ./rulesets.json)" >> $GITHUB_OUTPUT
+
+      - id: read-json-repos
+        run: echo "REPOSITORIES=$(jq -c . < ./repositories.json)" >> $GITHUB_OUTPUT
+
+      - name: Set branch protection rules on selected reposiories
+        run: |
+          repo_names=$(jq -r '.repositories[].repo_name' repositories.json) && echo $repo_names
