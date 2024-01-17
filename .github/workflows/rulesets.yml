@@ -19,3 +19,8 @@ jobs:
       - name: Set branch protection rules on selected reposiories
         run: |
           repo_names=$(jq -r '.repositories[].repo_name' repositories.json) && echo $repo_names
+
+          for u in $REPOS
+          do
+            echo $u
+          done
