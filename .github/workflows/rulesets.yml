@@ -16,11 +16,11 @@ jobs:
       - id: read-json-repos
         run: echo "REPOSITORIES=$(jq -c . < ./repositories.json)" >> $GITHUB_OUTPUT
 
-      - name: Set branch protection rules on selected reposiories
+      - name: Set protection rules on selected reposiories
         run: |
           repo_names=$(jq -r '.repositories[].repo_name' repositories.json) && echo $repo_names
 
-          for u in $REPOS
+          for u in $repo_names
           do
             echo $u
           done
